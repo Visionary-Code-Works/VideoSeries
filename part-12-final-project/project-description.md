@@ -29,10 +29,7 @@
 
 This structure for the "Final Project" section is designed to provide a comprehensive and practical experience. It should challenge learners to apply the skills they've acquired throughout the series, test their problem-solving abilities, and encourage them to explore and experiment with their own creative solutions.
 
-
-Given the specific focus of the final project on building a web-based data dashboard using Flask, Pandas, and Plotly, the project structure would be slightly different to incorporate the specific technologies and steps involved. Here's how the structure could be adapted:
-
-### Final Project: Web-Based Data Dashboard
+## Final Project: Web-Based Data Dashboard
 
 1. **Project Description (File: `project-description.md`):**
    - **Overview**: An introduction to the project, explaining the goal of building a data dashboard using Flask, Pandas, and Plotly.

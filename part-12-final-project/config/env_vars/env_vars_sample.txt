@@ -1,0 +1,7 @@
+# Sample Environment Variables
+
+# Database URI
+DATABASE_URI=sqlite:///prod.db
+
+# Secret Key
+SECRET_KEY=change_this_to_a_secure_key

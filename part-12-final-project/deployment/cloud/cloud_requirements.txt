@@ -1,0 +1,6 @@
+
+flask
+pandas
+plotly
+gunicorn
+# Any other dependencies specific to cloud deployment

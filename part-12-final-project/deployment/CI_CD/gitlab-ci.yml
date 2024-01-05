@@ -1,0 +1,18 @@
+
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  script:
+    - echo "Running tests..."
+    - python -m unittest discover -s testing
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying application..."
+    # Deployment scripts or commands go here
+  only:
+    - master

@@ -2,7 +2,7 @@
 
 [Visual: Channel logo animation. Background music starts. Transition to host on screen.]
 
-Host: "Hello and welcome back to [Your Channel Name]! Today, we're diving into the world of Python programming. Whether you're a complete beginner or just looking to refresh your skills, this video is for you. We'll explore basic Python concepts, data types, simple operations, and even how to install Python on your computer. So, let's get started!"
+Host: "Hello and welcome back to Visionary Code Works! Today, we're diving into the world of Python programming. Whether you're a complete beginner or just looking to refresh your skills, this video is for you. We'll explore basic Python concepts, data types, simple operations, and even how to install Python on your computer. So, let's get started!"
 
 **[Section 1: Basic Python Concepts - 0:31 - 2:00]**
 
@@ -37,6 +37,7 @@ Host (Voiceover): "Python makes it easy to perform arithmetic operations. You ca
 Host (Voiceover): "To start using Python, you need to install it. Head to python.org and download the version recommended for your operating system. If you're on Windows, make sure to add Python to your PATH during installation. macOS and Linux users, you might already have Python installed, but it's good to check and update if necessary."
 
 [Visual: Step-by-step Python installation process on different operating systems.]
+https://www.python.org/downloads/
 
 **[Conclusion: 7:01 - 7:30]**
 

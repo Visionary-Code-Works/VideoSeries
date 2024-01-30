@@ -126,7 +126,7 @@ def create_intro_animation(
     save_path,
     image_path=None,
     sound_path=None,
-    image_size=None  # Parameter for image size
+    image_size=None,  # Parameter for image size
 ):
     """
     Create an intro animation with text, optional images, and sound.
@@ -146,23 +146,45 @@ def create_intro_animation(
         image_size (tuple, optional): New size of the image as (width, height). Defaults to None.
     """
     screen, clock = init_pygame(window_width, window_height)
-    image, sound = load_resources(image_path, sound_path, image_size)  # Pass image_size to load_resources
+    image, sound = load_resources(image_path, sound_path, image_size)
     font = pygame.font.Font(None, font_size)
     number_of_frames = duration_in_seconds * fps
+    lines = text_content.split('\n')
 
     play_sound(sound)
 
     for i in range(number_of_frames):
-        text, text_rect = apply_text_effects(
+        # Clear the screen for the new frame
+        screen.fill(bg_color)
+
+
+        y_offset = 0  # Initial offset for the first line
+        for line in lines:
+            text_surface, text_rect = apply_text_effects(
+                font,
+                line,
+                text_color,
+                (window_width / 2, window_height / 2 + y_offset)
+            )
+            screen.blit(text_surface, text_rect)
+            y_offset += text_rect.height
+        x_position = (window_width / 2) + (i % window_width) * 0.5
+        opacity = 255 - (i * 255 // number_of_frames)
+
+        # Render the text with new position and opacity
+        text_surface, text_rect = apply_text_effects(
             font,
             text_content,
             text_color,
-            (window_width / 2, window_height / 2 + i % window_height),
+            (x_position, window_height / 2)
         )
-        # Determine the position of the image
+        text_surface.set_alpha(opacity)  # Apply the opacity to the text surface
+
+        # Position for the image
         image_rect = image.get_rect(center=(window_width / 2, window_height / 2)) if image else None
 
-        create_frame(screen, bg_color, text, text_rect, image, image_rect)
+        # Create the frame
+        create_frame(screen, bg_color, text_surface, text_rect, image, image_rect)
         save_frame(screen, save_path, i)
         clock.tick(fps)
 
@@ -200,7 +222,6 @@ def create_video_from_frames(save_path, num_frames, fps, sound_path=None):
     clip.write_videofile(os.path.join(save_path, "intro_animation.mp4"))
 
 
-
 def main():
     """
     Main function to create an intro animation and compile it into a video.
@@ -209,19 +230,19 @@ def main():
         None
     """
     # Parameters for the intro animation
-    duration_in_seconds = 5
+    duration_in_seconds = 9
     fps = 24
     window_width = 500
     window_height = 500
     text_content = "Visionary Code Works"
-    font_size = 36
-    text_color = (255, 255, 255)  # White color
-    bg_color = (0, 0, 0)  # Black background
+    font_size = 54
+    text_color = (253, 218, 13)  # White color
+    bg_color = (12, 12, 12)  # Black background
     save_path = "./assets/img/frames/"
     image_path = "./assets/icons/logo.png"
     sound_path = "./assets/sounds/intro_sound.wav"
     num_frames = duration_in_seconds * fps
-    image_size = (200, 200)  # desired width and height
+    image_size = (400, 400)  # desired width and height
     # image, sound = load_resources(image_path, sound_path, image_size)
 
     # Create intro animation frames
@@ -237,7 +258,7 @@ def main():
         save_path,
         image_path,
         sound_path,
-        image_size
+        image_size,
     )
 
     # Create video from frames

@@ -2,7 +2,7 @@
 
 import unittest
 from unittest.mock import patch
-import load_answers, run_quiz
+from ..quizzes import load_answers, run_quiz
 
 
 class TestQuiz(unittest.TestCase):

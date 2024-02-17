@@ -1,1 +1,3 @@
-# part-02-data-types-and-structures/__init__.py
+# part-02
+
+from .quizzes import run_quiz, load_answers, shuffle_quiz

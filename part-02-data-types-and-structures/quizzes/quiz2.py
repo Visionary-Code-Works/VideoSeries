@@ -13,7 +13,7 @@ quiz = [
         ],
         "answer": 2,
     },
-    {
+    {1
         "id": 2,
         "question": "Which of the following is a valid tuple in Python?",
         "options": [

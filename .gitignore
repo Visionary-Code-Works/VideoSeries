@@ -160,5 +160,7 @@ cython_debug/
 #.idea/
 
 TODO*
+part_output.*
+dev-wk*
 CreatorNotes
 frames/

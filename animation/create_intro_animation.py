@@ -82,12 +82,8 @@ def create_frame(screen, bg_color, text, text_rect, image=None, image_rect=None)
         image_rect (pygame.Rect, optional): The image rectangle. Defaults to None.
     """
     screen.fill(bg_color)
-
-    # Draw the image first
     if image:
         screen.blit(image, image_rect)
-
-    # Then draw the text, so it's on top of the image
     screen.blit(text, text_rect)
 
 
@@ -156,8 +152,6 @@ def create_intro_animation(
     for i in range(number_of_frames):
         # Clear the screen for the new frame
         screen.fill(bg_color)
-
-
         y_offset = 0  # Initial offset for the first line
         for line in lines:
             text_surface, text_rect = apply_text_effects(
@@ -242,10 +236,9 @@ def main():
     image_path = "./assets/icons/logo.png"
     sound_path = "./assets/sounds/intro_sound.wav"
     num_frames = duration_in_seconds * fps
-    image_size = (400, 400)  # desired width and height
+    image_size = (400, 400)
     # image, sound = load_resources(image_path, sound_path, image_size)
 
-    # Create intro animation frames
     create_intro_animation(
         duration_in_seconds,
         fps,
@@ -260,8 +253,6 @@ def main():
         sound_path,
         image_size,
     )
-
-    # Create video from frames
     create_video_from_frames(save_path, num_frames, fps, sound_path=sound_path)
 
 

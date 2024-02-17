@@ -1,7 +1,7 @@
 import os
 
 # Set your GitHub details here
-GITHUB_UNAME = "vcwtech"
+GITHUB_UNAME = "Visionary-Code-Works"
 REPO_NAME = "VideoSeries"
 GIT_BRANCH = "main"
 

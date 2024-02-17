@@ -100,7 +100,7 @@ def shuffle_quiz(quiz):
 
 def load_answers(file_path):
     # Load answers from a separate file
-    with open(file_path, "r") as file:
+    with open(file_path, "r", encoding="utf-8") as file:
         return json.load(file)
 
 

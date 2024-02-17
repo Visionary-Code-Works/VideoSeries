@@ -29,3 +29,5 @@ Stay connected with our Python video series and stay ahead in your programming j
 ## Disclaimer
 
 This repository is meant to complement a specific Python video series. Please refer to the videos for context and instruction.
+
+[Links Selection](./docs/file_links_dropdown.html) | [Links List](./docs/github_links.md)

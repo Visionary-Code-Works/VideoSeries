@@ -1,7 +1,7 @@
 import os
 
 # Set your GitHub details here
-github_username = "vcwtech"
+github_username = "Visionary-Code-Works"
 repository_name = "VideoSeries"
 branch_name = "main"
 
